@@ -1,0 +1,80 @@
+
+    <mat-card class="alingCard">
+      <mat-card-content>
+        <h1 mat-card-title> Consult Employees </h1>
+        <div class="example-row">
+          <mat-form-field class="example-full-width">
+            <mat-label>Id Employee</mat-label>
+            <input matInput id="idEmployee"  type="number" >
+          </mat-form-field>
+          
+          <div class="example-button-row">
+            <button mat-raised-button color="primary"  (click)="getEmployeesId()">Search</button>
+          </div>
+      </div>
+
+      <div [ngClass]="{'error-text': error}">{{ error }}</div>
+
+
+      </mat-card-content>
+    </mat-card>
+  
+  
+  
+  
+      <table mat-table [dataSource]="lstEmployees" class="mat-elevation-z8">
+  
+  
+        <ng-container matColumnDef="Id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+           <td mat-cell *matCellDef="let element"> {{element.id}} </td> 
+        </ng-container>
+      
+  
+        <ng-container matColumnDef="Name Employee">
+          <th mat-header-cell *matHeaderCellDef> NAME EMPLOYEE </th>
+          <td mat-cell *matCellDef="let element"> {{element.nameEmployee}} </td> 
+  
+        </ng-container>
+      
+  
+        <ng-container matColumnDef="Age Employee">
+          <th mat-header-cell *matHeaderCellDef> AGE EMPLOYEE </th>
+          <td mat-cell *matCellDef="let element"> {{element.ageEmployee}} </td> 
+        </ng-container>
+      
+  
+  
+        <ng-container matColumnDef="Salary">
+          <th mat-header-cell *matHeaderCellDef> SALARY </th>
+          <td mat-cell *matCellDef="let element"> {{element.salary | currency:'$':'symbol':'1.0-0'}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="Monthly Salary">
+          <th mat-header-cell *matHeaderCellDef> MONTHLY SALARY </th>
+          <td mat-cell *matCellDef="let element"> {{element.monthlySalary | currency:'$':'symbol':'1.0-0'}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Profile Image">
+          <th mat-header-cell *matHeaderCellDef> PROFILE IMAGE </th>
+          <td mat-cell *matCellDef="let element"> {{element.profileImage}} </td> 
+     
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+ 
